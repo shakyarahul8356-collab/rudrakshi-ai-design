@@ -16,14 +16,15 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Rudrakshi AI Design",
-              url: "https://rudrakshi-ai-design.vercel.app",
-              logo: "https://rudrakshi-ai-design.vercel.app/logo.png",
-            }),
+            __html: `{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Rudrakshi AI Design",
+  "url": "https://rudrakshi-ai-design.vercel.app",
+  "logo": "https://rudrakshi-ai-design.vercel.app/logo.png"
+}`,
           }}
         />
       </head>
