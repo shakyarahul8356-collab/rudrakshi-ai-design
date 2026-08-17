@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
@@ -26,11 +27,17 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#home" onClick={closeMenu} className="group flex items-center gap-3">
-          <img
-            src="/logo.png"
-            alt="Rudrakshi AI Design logo"
-            className="h-11 w-11 rounded-2xl border border-yellow-500/30 object-cover transition-all duration-500 group-hover:rotate-6"
-          />
+          <div className="flex h-14 w-14 items-center justify-center transition-all duration-500 group-hover:scale-105">
+            <Image
+              src="/logo.png"
+              alt="Rudrakshi AI Design logo"
+              width={56}
+              height={56}
+              className="h-full w-full object-contain"
+              priority
+              unoptimized
+            />
+          </div>
 
           <div>
             <p className="text-sm font-black tracking-[3px] text-white">RUDRAKSHI</p>
