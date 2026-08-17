@@ -3,59 +3,90 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Navbar() {
+export default function Header() {
   return (
-    <nav className="w-full bg-[#0a0a0a] border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          
-          {/* Logo Section */}
-          <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/logo.png"
-                alt="Rudrakshi AI Design Logo"
-                width={55}
-                height={55}
-                priority
-                unoptimized
-                className="object-contain"
-              />
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-white tracking-widest">
-                  RUDRAKSHI
-                </span>
-                <span className="text-[11px] font-bold text-yellow-500 tracking-[0.2em]">
-                  AI DESIGN
-                </span>
-              </div>
-            </Link>
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+
+        {/* LOGO */}
+        <Link
+          href="/"
+          className="flex items-center gap-3"
+          aria-label="Rudrakshi AI Design Home"
+        >
+          <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full">
+            <Image
+              src="/logo.png"
+              alt="Rudrakshi AI Design Logo"
+              width={120}
+              height={120}
+              priority
+              className="h-full w-full object-contain"
+            />
           </div>
 
-          {/* Menu Button (Hamburger) */}
-          <div className="flex items-center">
-            <button
-              className="text-gray-300 hover:text-white focus:outline-none p-2 border border-gray-700 rounded-md"
-              aria-label="Menu"
-            >
-              <svg 
-                className="h-6 w-6" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M4 6h16M4 12h16M4 18h16" 
-                />
-              </svg>
-            </button>
-          </div>
+          <div className="hidden sm:block">
+            <div className="text-lg font-bold leading-tight text-white">
+              RUDRAKSHI
+            </div>
 
-        </div>
+            <div className="text-xs font-medium tracking-[0.25em] text-purple-300">
+              AI DESIGN
+            </div>
+
+            <div className="text-[9px] tracking-wider text-gray-400">
+              DESIGN • CREATE • INSPIRE
+            </div>
+          </div>
+        </Link>
+
+        {/* NAVIGATION */}
+        <nav className="hidden items-center gap-8 md:flex">
+          <a
+            href="#home"
+            className="text-sm font-medium text-white transition hover:text-purple-300"
+          >
+            Home
+          </a>
+
+          <a
+            href="#services"
+            className="text-sm font-medium text-white transition hover:text-purple-300"
+          >
+            Services
+          </a>
+
+          <a
+            href="#portfolio"
+            className="text-sm font-medium text-white transition hover:text-purple-300"
+          >
+            Portfolio
+          </a>
+
+          <a
+            href="#pricing"
+            className="text-sm font-medium text-white transition hover:text-purple-300"
+          >
+            Pricing
+          </a>
+
+          <a
+            href="#contact"
+            className="text-sm font-medium text-white transition hover:text-purple-300"
+          >
+            Contact
+          </a>
+        </nav>
+
+        {/* CTA */}
+        <a
+          href="#contact"
+          className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:scale-105"
+        >
+          Get Started
+        </a>
+
       </div>
-    </nav>
+    </header>
   );
 }
