@@ -5,43 +5,45 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/95 backdrop-blur-xl">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
         {/* LOGO */}
         <Link
           href="/"
           className="flex items-center gap-3"
-          aria-label="Rudrakshi AI Design Home"
+          aria-label="Rudrakshi AI Design"
         >
-          <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full">
+          {/* Logo Image */}
+          <div className="relative h-20 w-20 shrink-0">
             <Image
               src="/logo.png"
               alt="Rudrakshi AI Design Logo"
-              width={120}
-              height={120}
+              fill
               priority
-              className="h-full w-full object-contain"
+              sizes="80px"
+              className="object-contain"
             />
           </div>
 
-          <div className="hidden sm:block">
-            <div className="text-lg font-bold leading-tight text-white">
+          {/* Logo Text */}
+          <div className="flex flex-col justify-center">
+            <span className="text-xl font-extrabold tracking-wide text-white sm:text-2xl">
               RUDRAKSHI
-            </div>
+            </span>
 
-            <div className="text-xs font-medium tracking-[0.25em] text-purple-300">
+            <span className="text-xs font-semibold tracking-[0.3em] text-purple-300 sm:text-sm">
               AI DESIGN
-            </div>
+            </span>
 
-            <div className="text-[9px] tracking-wider text-gray-400">
+            <span className="mt-1 text-[9px] tracking-[0.2em] text-gray-400 sm:text-[10px]">
               DESIGN • CREATE • INSPIRE
-            </div>
+            </span>
           </div>
         </Link>
 
         {/* NAVIGATION */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           <a
             href="#home"
             className="text-sm font-medium text-white transition hover:text-purple-300"
@@ -81,7 +83,7 @@ export default function Header() {
         {/* CTA */}
         <a
           href="#contact"
-          className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:scale-105"
+          className="hidden rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition duration-300 hover:scale-105 md:block"
         >
           Get Started
         </a>
