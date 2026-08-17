@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,6 +26,14 @@ export const metadata: Metadata = {
     url: "https://rudrakshi-ai-design.vercel.app/",
     siteName: "Rudrakshi AI Design",
     type: "website",
+    images: [
+      {
+        url: "https://rudrakshi-ai-design.vercel.app/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Rudrakshi AI Design logo",
+      },
+    ],
   },
 };
 
@@ -36,7 +45,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
+        <link rel="icon" href="/logo.png" />
+        <Script
+          id="organization-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: `{
@@ -49,7 +60,23 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-KP9MYHHS6X"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KP9MYHHS6X');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Menu,
-  X,
-  Sparkles,
-  ArrowUpRight,
-} from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -30,22 +25,15 @@ export default function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
         {/* Logo */}
-        <a
-          href="#home"
-          onClick={closeMenu}
-          className="group flex items-center gap-3"
-        >
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-yellow-500/30 bg-yellow-500/10 transition-all duration-500 group-hover:rotate-6 group-hover:bg-yellow-500">
-            <Sparkles
-              size={21}
-              className="text-yellow-400 transition-colors group-hover:text-black"
-            />
-          </div>
+        <a href="#home" onClick={closeMenu} className="group flex items-center gap-3">
+          <img
+            src="/logo.png"
+            alt="Rudrakshi AI Design logo"
+            className="h-11 w-11 rounded-2xl border border-yellow-500/30 object-cover transition-all duration-500 group-hover:rotate-6"
+          />
 
           <div>
-            <p className="text-sm font-black tracking-[3px] text-white">
-              RUDRAKSHI
-            </p>
+            <p className="text-sm font-black tracking-[3px] text-white">RUDRAKSHI</p>
 
             <p className="text-[8px] font-bold uppercase tracking-[4px] text-yellow-500">
               AI DESIGN
