@@ -18,6 +18,7 @@ export default function Navbar() {
                 width={55}
                 height={55}
                 priority
+                unoptimized
                 className="object-contain"
               />
               <div className="flex flex-col">
